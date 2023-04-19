@@ -1,0 +1,46 @@
+input[type=text], input[type=date], input[type=number], textarea{
+    display: block;
+    width: 60%;
+    padding: 12px 20px;
+    margin: 8px;
+    box-sizing: border-box;
+    border-radius: 6px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.1);
+    border: none;
+}
+input[type=submit] {
+    width: 30%;
+    display: block;
+    padding: 12px 20px;
+    margin: 16px 0 0 8px;
+    box-sizing: border-box;
+    color: white;
+    background-color: #333333;
+    border-radius: 6px;
+    align-self: end;
+    font-size: 1.1rem;
+}
+label{
+    margin-left: 8px;
+    display: inline-block;
+}
+textarea{
+    height: 150px;
+    resize: none;
+}
+.container{
+    display: flex;
+    margin-bottom: 10%;
+}
+#col-1{
+    padding-top: 1rem;
+    flex: 4;
+}
+#col-2{
+    flex: 1;
+    align-self: center;
+}
+.msg{
+    padding: 24px;
+    color: #333;
+}
