@@ -243,12 +243,21 @@ public class ReadQuery {
         preparedStatement.close();
     }
 
-    public void insertIntoCourse(int studentId, int courseId, int year) throws SQLException {
-        String sql = "insert into course_enrollments(student_id, course_id, year) values (?,?,?)";
+    public void insertIntoCourse(int studentId, int courseId, int year, double score) throws SQLException {
+        String sql;
+        if(score < 0){
+            sql = "insert into course_enrollments(student_id, course_id, year) values (?,?,?)";
+        }
+        else{
+            sql = "insert into course_enrollments(student_id, course_id, year, score) values (?,?,?,?)";
+        }
         PreparedStatement preparedStatement = connection.prepareStatement(sql);
         preparedStatement.setInt(1, studentId);
         preparedStatement.setInt(2, courseId);
         preparedStatement.setInt(3, year);
+        if(score >= 0){
+            preparedStatement.setDouble(4, score);
+        }
         preparedStatement.executeUpdate();
         preparedStatement.close();
     }

@@ -201,8 +201,13 @@ public class CoursesController extends HttpServlet {
                 int studentId = Integer.parseInt(request.getParameter("student-id"));
                 int courseId = Integer.parseInt(request.getParameter("course-id"));
                 int year = Integer.parseInt(request.getParameter("year"));
+                String scoreString = request.getParameter("student-score");
+                double score = -1;
+                if(!scoreString.equals("")){
+                    score = Double.parseDouble(scoreString);
+                }
                 try {
-                    readQuery.insertIntoCourse(studentId, courseId, year);
+                    readQuery.insertIntoCourse(studentId, courseId, year, score);
                     response.sendRedirect("/courses?"+queryString);
                 } catch (SQLException e) {
                     throw new RuntimeException(e);

@@ -46,8 +46,8 @@
     z-index: 9999;
 }
 /* Style for the form inside the floating form container */
-.floating-form-container form {
-
+.floating-form-container form input[type=text], input[type=number]{
+    display: block;
 }
 .floating-form-container form h2{
     padding-bottom: 14px;

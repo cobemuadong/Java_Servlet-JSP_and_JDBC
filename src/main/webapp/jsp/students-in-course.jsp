@@ -73,6 +73,7 @@
         <input name="course-id" value="${requestScope.courseId}" type="hidden">
         <input name="year" value="${requestScope.courseYear}" type="hidden">
         <input style="width: 68.9%" type="number" id="student-id" name="student-id">
+        <label for="student-score">Score:</label><input style="width: 68.9%" type="number" step="0.01" id="student-score" name="student-score">
         <input type="submit" style="width: 20%" value="Submit">
     </form>
 </div>
